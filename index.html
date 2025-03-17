@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <title>Оборудование для команды прославления</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-theme {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+        }
+        .light-theme {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Навбар */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #444;
+            padding: 10px 20px;
+        }
+        .navbar img {
+            height: 40px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Бургер-меню */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #444;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                text-align: center;
+            }
+            .nav-links a {
+                padding: 10px;
+                display: block;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .theme-toggle {
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 118, 136, 0.5);
+        }
+
+        /* Секции */
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+        h2 {
+            background-color: #444;
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .light-theme h2 {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        /* Таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #555;
+        }
+        th {
+            background-color: #555;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #4a4a4a;
+        }
+        tr:hover {
+            background-color: #666;
+        }
+        .light-theme th {
+            background-color: #bbb;
+        }
+        .light-theme tr:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+        .light-theme tr:hover {
+            background-color: #ccc;
+        }
+
+         .welcome {
+            padding: 20px;
+            margin: 20px;
+            background-color: #555;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+         .header {
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+@media screen and (max-width: 768px) {
+section {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+}
+
+    </style>
+</head>
+<body class="dark-theme">
+
+    <nav class="navbar">
+        <img src="img/logo.svg" alt="Логотип">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links">
+            <a href="#needed">Что необходимо</a>
+            <a href="#current">Что имеем</a>
+            <a href="#share">Чем можем поделиться</a>
+            <a href="#contacts">Контакты</a>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
+    </nav>
+
+      <div class="header">Церковь Слово Жизни г. Великий Новгород</div>
+    
+    <div class="welcome">
+        Добро пожаловать! Мы можем поделиться некоторым оборудованием, если кому-то что-то нужно.
+        Однако у нас также есть определенные нужды, в которых мы будем благодарны за помощь.
+    </div>
+    
+
+    <section id="needed">
+        <h2>Что нам критически необходимо</h2>
+        <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Описание</th>
+            </tr>
+            <tr><td>Микшерный пульт</td><td>Цифровой пульт с возможностью многоканальной записи</td></tr>
+            <tr><td>Вокальные микрофоны</td><td>Проводные и беспроводные микрофоны для вокалистов</td></tr>
+            <tr><td>Мониторы</td><td>Напольные мониторы для сцены</td></tr>
+            <tr><td>Гитарные усилители</td><td>Усилители для электрогитар</td></tr>
+            <tr><td>Кабели и коммутация</td><td>Патч-корды, XLR, Jack-кабели</td></tr>
+        </table>
+    </section>
+
+    <section id="current">
+        <h2>Что мы используем на данный момент</h2>
+        <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Описание</th>
+            </tr>
+            <tr><td>Акустическая система</td><td>Основные колонки и сабвуферы</td></tr>
+            <tr><td>Барабанная установка</td><td>Акустическая барабанная установка с микрофонами</td></tr>
+            <tr><td>Синтезатор</td><td>Клавишный инструмент для аккомпанемента</td></tr>
+        </table>
+    </section>
+
+    <section id="share">
+        <h2>Чем мы можем поделиться</h2>
+        <table>
+            <tr>
+                <th>Наименование</th>
+                <th>Описание</th>
+            </tr>
+            <tr><td>Стойки для микрофонов</td><td>Несколько запасных стойк</td></tr>
+            <tr><td>Дополнительные гитарные струны</td><td>Запасные комплекты</td></tr>
+            <tr><td>Ноты и партитуры</td><td>Набор нот для репертуара</td></tr>
+        </table>
+    </section>
+
+
+    <section id="contacts">
+        <h2>Контакты</h2>
+        <div class="contacts" style="text-align: center; padding: 20px; background: #555; color: white; border-radius: 10px;">
+            <!-- <p>Email: <a href="mailto:info@example.com" style="color: #ff7eb3; text-decoration: none; font-weight: bold;">info@example.com</a></p> -->
+            <p>Телефон: <a href="tel:+79116061020" style="color: #ff7eb3; text-decoration: none; font-weight: bold;">+7 (911) 606-10-20 - Олег Колодезников</a></p>
+            <p>
+                <a href="https://t.me/OlegKolod" target="_blank" style="margin: 0 10px; font-size: 24px; color: #ff7eb3; text-decoration: none;">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://wa.me/79116061020" target="_blank" style="margin: 0 10px; font-size: 24px; color: #ff7eb3;">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </p>
+        </div>
+    </section>
+
+
+
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('light-theme');
+            body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', body.classList.contains('light-theme') ? 'light' : 'dark');
+        }
+
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+            } else {
+                document.body.classList.add('dark-theme');
+            }
+        });
+    </script>
+
+</body>
+</html>
